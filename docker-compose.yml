@@ -2,11 +2,11 @@ version: '3.8'
 services:
   db:
     image: postgres:${POSTGRES_VERSION}
-    container_name: common
+    container_name: ${DB_DATABASE}
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: laravel
+      POSTGRES_DB: ${DB_DATABASE}
     ports:
       - "5432:5432"
     volumes:
